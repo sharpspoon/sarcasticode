@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Code Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        pre {
+            text-align: left;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submit Code for AI Review</h1>
+    <div class="container">
+        <form method="post">
+            <textarea name="code" placeholder="Enter your code snippet here"></textarea><br>
+            <input type="submit" value="Review Code">
+        </form>
+        {% if original_code %}
+            <h2>Original Code</h2>
+            <pre>{{ original_code }}</pre>
+            <h2>Constructive Feedback</h2>
+            <pre>{{ ai_review }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>
